@@ -4,7 +4,8 @@
 server="10.16.4.11" #DDNS server's IP address, in which control your domain.
 host="amoners.shufangkeji.com" #Fully Qualified Domain $Name with your machine.
 interface="p4p1" #Interface for  access from Internet.
-ip=$(ifconfig ${interface}|grep inet|head -n 1|awk '{print $2}')
+#ip=$(ifconfig ${interface}|grep inet|head -n 1|awk '{print $2}')
+ip=$(curl --silent ifconfig.me) #If you add your host in inner DNS, you should comment this and uncomment last line.
 key="./ddns.key" #Directory of key file for update zone 
 echo "server $server" > dns_file
 echo "update add $host 600 A $ip" >> dns_file
