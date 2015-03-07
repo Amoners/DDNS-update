@@ -1,4 +1,4 @@
-# nsupdate-in-shell
+# DDNS-update
 Using nsupdate in shell to update DNS record.
 
 If your DNS update reocrd need a key, you can named file to ddns.key and put here.
